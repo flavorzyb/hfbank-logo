@@ -19,7 +19,7 @@ NEWSPIDER_MODULE = 'hfbank_logo.spiders'
 #USER_AGENT = 'hfbank_logo (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
+ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
@@ -39,22 +39,23 @@ ROBOTSTXT_OBEY = True
 #TELNETCONSOLE_ENABLED = False
 
 # Override the default request headers:
-#DEFAULT_REQUEST_HEADERS = {
-#   'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-#   'Accept-Language': 'en',
-#}
+DEFAULT_REQUEST_HEADERS = {
+  'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'Accept-Language': 'en',
+  'USER-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:62.0) Gecko/20100101 Firefox/62.0',
+}
 
 # Enable or disable spider middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
-#SPIDER_MIDDLEWARES = {
-#    'hfbank_logo.middlewares.HfbankLogoSpiderMiddleware': 543,
-#}
+SPIDER_MIDDLEWARES = {
+   'hfbank_logo.middlewares.UserAgentMiddleware': 543,
+}
 
 # Enable or disable downloader middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
-#DOWNLOADER_MIDDLEWARES = {
-#    'hfbank_logo.middlewares.MyCustomDownloaderMiddleware': 543,
-#}
+DOWNLOADER_MIDDLEWARES = {
+   'hfbank_logo.middlewares.UserAgentMiddleware': 543,
+}
 
 # Enable or disable extensions
 # See http://scrapy.readthedocs.org/en/latest/topics/extensions.html
@@ -64,9 +65,18 @@ ROBOTSTXT_OBEY = True
 
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'hfbank_logo.pipelines.HfbankLogoPipeline': 300,
-#}
+ITEM_PIPELINES = {
+    'scrapy.pipelines.images.ImagesPipeline': 300,
+}
+
+# ImagesPipeline辅助配置项
+# 图片存储路径(绝对路径 or 相对路径)
+IMAGES_STORE = 'data/baidu/'
+# 该字段的值为XxxItem中定义的存储图片链接的image_urls字段
+IMAGES_URLS_FIELD = 'image_urls'
+# 该字段的值为XxxItem中定义的存储图片信息的images字段
+IMAGES_RESULT_FIELD = 'images'
+
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See http://doc.scrapy.org/en/latest/topics/autothrottle.html
