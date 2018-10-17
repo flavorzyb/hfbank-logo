@@ -14,7 +14,7 @@ class BaiDuSpider(scrapy.Spider):
         data = js.get('data')
         images = []
         for v in data:
-            if v.has_key('middleURL'):
+            if 'middleURL' in v:
                 images.append(v['middleURL'])
 
         item = BaiDuPicItem()
