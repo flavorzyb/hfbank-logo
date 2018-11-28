@@ -1,0 +1,26 @@
+<annotation>
+	<folder>best</folder>
+	<filename>0183.jpeg</filename>
+	<path>/Users/flavor/program/hfbank-logo/images/baidu/best/0183.jpeg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>435</width>
+		<height>307</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>hfbank logo</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>211</xmin>
+			<ymin>85</ymin>
+			<xmax>296</xmax>
+			<ymax>152</ymax>
+		</bndbox>
+	</object>
+</annotation>
