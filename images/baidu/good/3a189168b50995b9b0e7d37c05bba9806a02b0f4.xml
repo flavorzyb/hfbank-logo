@@ -1,0 +1,26 @@
+<annotation>
+	<folder>good</folder>
+	<filename>3a189168b50995b9b0e7d37c05bba9806a02b0f4.jpg</filename>
+	<path>/Users/flavor/program/hfbank-logo/images/baidu/good/3a189168b50995b9b0e7d37c05bba9806a02b0f4.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>500</width>
+		<height>336</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>hfbank logo</name>
+		<pose>Unspecified</pose>
+		<truncated>1</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>73</xmin>
+			<ymin>1</ymin>
+			<xmax>108</xmax>
+			<ymax>23</ymax>
+		</bndbox>
+	</object>
+</annotation>
