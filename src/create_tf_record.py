@@ -31,17 +31,20 @@ flags.DEFINE_string('data_dir', '', 'Root directory to raw pet dataset.')
 flags.DEFINE_string('output_dir', '', 'Path to directory to output TFRecords.')
 flags.DEFINE_string('label_map_path', 'data/pet_label_map.pbtxt',
                     'Path to label map proto')
-flags.DEFINE_boolean('faces_only', True, 'If True, generates bounding boxes '
-                     'for pet faces.  Otherwise generates bounding boxes (as '
-                     'well as segmentations for full pet bodies).  Note that '
-                     'in the latter case, the resulting files are much larger.')
-flags.DEFINE_string('mask_type', 'png', 'How to represent instance '
-                    'segmentation masks. Options are "png" or "numerical".')
-flags.DEFINE_integer('num_shards', 10, 'Number of TFRecord shards')
+# flags.DEFINE_boolean('faces_only', True, 'If True, generates bounding boxes '
+#                      'for pet faces.  Otherwise generates bounding boxes (as '
+#                      'well as segmentations for full pet bodies).  Note that '
+#                      'in the latter case, the resulting files are much larger.')
+# flags.DEFINE_string('mask_type', 'png', 'How to represent instance '
+#                     'segmentation masks. Options are "png" or "numerical".')
+# flags.DEFINE_integer('num_shards', 10, 'Number of TFRecord shards')
 
 FLAGS = flags.FLAGS
 
 
 def main(_):
+    print "main start"
     data_dir = FLAGS.data_dir
+    label_map_dict = label_map_util.get_label_map_dict(FLAGS.label_map_path)
     print data_dir
+    print "ok"
